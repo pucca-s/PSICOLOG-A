@@ -1,145 +1,279 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malla Curricular Psicología - UST</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malla Interactiva Psicología</title>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f9f6ff;
+    color: #2a033e;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    text-align: center;
+    padding: 20px;
+    background: #3C096C;
+    color: white;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 15px;
+  }
+  .semestre {
+    flex: 1 1 300px;
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+  .semestre h2 {
+    text-align: center;
+    background: #C77DFF;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 1.2em;
+  }
+  .materia {
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .bloqueada {
+    background: #3C096C;
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  .habilitada {
+    background: #C77DFF;
+    color: white;
+  }
+  .aprobada {
+    background: #EBC9FF;
+    text-decoration: line-through;
+    color: #4b2c5e;
+    opacity: 0.85;
+  }
+  .btn-reset {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    background: #3C096C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .btn-reset:hover {
+    background: #5a189a;
+  }
+  @media(max-width: 768px) {
+    .container {flex-direction: column; align-items: center;}
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Malla Curricular Psicología</h1>
-  </header>
 
-  <main>
+<header>
+  <h1>Malla Interactiva - Psicología</h1>
+  <p>Toca una materia habilitada para marcarla como aprobada. Se desbloquearán automáticamente las correlativas.</p>
+</header>
 
-    <!-- 1° SEMESTRE -->
-    <section class="semestre">
-      <h2>1° Semestre</h2>
-      <div class="ramos">
-        <div class="ramo linea-basica">Fundamentos de la Psicología</div>
-        <div class="ramo linea-basica">Psicología del Desarrollo I</div>
-        <div class="ramo linea-comunitaria">Antropología Social</div>
-        <div class="ramo linea-talleres">Taller de Competencias Comunicativas</div>
-        <div class="ramo linea-talleres">Taller de Competencias para el Aprendizaje</div>
-        <div class="ramo linea-desarrollo">Taller de Desarrollo Personal I</div>
-        <div class="ramo linea-desarrollo">Taller 1: Autoconocimiento</div>
-      </div>
-    </section>
+<div class="container">
 
-    <!-- 2° SEMESTRE -->
-    <section class="semestre">
-      <h2>2° Semestre</h2>
-      <div class="ramos">
-        <div class="ramo linea-basica">Psicobiología</div>
-        <div class="ramo linea-basica">Psicología del Desarrollo II</div>
-        <div class="ramo linea-basica">Teorías Cognitivas</div>
-        <div class="ramo linea-basica">Teorías Comunicativas</div>
-        <div class="ramo linea-investigacion">Pensamiento Matemático para Ciencias Sociales</div>
-        <div class="ramo linea-desarrollo">Taller de Desarrollo Personal II</div>
-        <div class="ramo linea-desarrollo">Taller 2: Relaciones Humanas</div>
-      </div>
-    </section>
+  <!-- SEMESTRE 1 -->
+  <div class="semestre">
+    <h2>1° Semestre</h2>
+    <div class="materia habilitada" data-id="fundamentos-psicologia" data-previas="">Fundamentos de la Psicología</div>
+    <div class="materia habilitada" data-id="psicologia-desarrollo-i" data-previas="">Psicología del Desarrollo I</div>
+    <div class="materia habilitada" data-id="antropologia-social" data-previas="">Antropología Social</div>
+    <div class="materia habilitada" data-id="taller-competencias-comunicativas" data-previas="">Taller de Competencias Comunicativas</div>
+    <div class="materia habilitada" data-id="taller-competencias-aprendizaje" data-previas="">Taller de Competencias para el Aprendizaje</div>
+    <div class="materia habilitada" data-id="taller-desarrollo-personal-i" data-previas="">Taller de Desarrollo Personal I</div>
+    <div class="materia habilitada" data-id="taller-1" data-previas="">Taller 1: Autoconocimiento</div>
+  </div>
 
-    <!-- 3° SEMESTRE -->
-    <section class="semestre">
-      <h2>3° Semestre</h2>
-      <div class="ramos">
-        <div class="ramo linea-neuro">Procesos Neuropsicológicos I</div>
-        <div class="ramo linea-basica">Psicología de la Personalidad</div>
-        <div class="ramo linea-basica">Teorías Humanistas</div>
-        <div class="ramo linea-basica">Teorías Sistémicas</div>
-        <div class="ramo linea-investigacion">Epistemología de la Ciencia Psicológica</div>
-        <div class="ramo linea-formacion">Cultura y Valores</div>
-        <div class="ramo linea-formacion">Inglés Básico I</div>
-      </div>
-    </section>
+  <!-- SEMESTRE 2 -->
+  <div class="semestre">
+    <h2>2° Semestre</h2>
+    <div class="materia bloqueada" data-id="psicobiologia" data-previas="fundamentos-psicologia">Psicobiología</div>
+    <div class="materia bloqueada" data-id="psicologia-desarrollo-ii" data-previas="psicologia-desarrollo-i">Psicología del Desarrollo II</div>
+    <div class="materia bloqueada" data-id="teorias-cognitivas" data-previas="fundamentos-psicologia">Teorías Cognitivas</div>
+    <div class="materia bloqueada" data-id="teorias-comunicativas" data-previas="taller-competencias-comunicativas">Teorías Comunicativas</div>
+    <div class="materia bloqueada" data-id="pensamiento-matematico" data-previas="taller-competencias-aprendizaje">Pensamiento Matemático para Ciencias Sociales</div>
+    <div class="materia bloqueada" data-id="taller-desarrollo-personal-ii" data-previas="taller-desarrollo-personal-i">Taller de Desarrollo Personal II</div>
+    <div class="materia bloqueada" data-id="taller-2" data-previas="taller-1">Taller 2: Relaciones Humanas</div>
+  </div>
 
-    <!-- 4° SEMESTRE -->
-    <section class="semestre">
-      <h2>4° Semestre</h2>
-      <div class="ramos">
-        <div class="ramo linea-neuro">Procesos Neuropsicológicos II</div>
-        <div class="ramo linea-basica">Psicología Social</div>
-        <div class="ramo linea-clinica">Psicopatología del Adulto</div>
-        <div class="ramo linea-investigacion">Investigación Cualitativa</div>
-        <div class="ramo linea-formacion">Persona y Sentido</div>
-        <div class="ramo linea-formacion">Inglés Básico II</div>
-        <div class="ramo linea-desarrollo">Evaluación del Desarrollo de Competencias I</div>
-      </div>
-    </section>
+  <!-- SEMESTRE 3 -->
+  <div class="semestre">
+    <h2>3° Semestre</h2>
+    <div class="materia bloqueada" data-id="procesos-neuropsicologicos-i" data-previas="psicobiologia">Procesos Neuropsicológicos I</div>
+    <div class="materia bloqueada" data-id="psicologia-personalidad" data-previas="teorias-cognitivas, psicologia-desarrollo-ii">Psicología de la Personalidad</div>
+    <div class="materia bloqueada" data-id="teorias-humanistas" data-previas="teorias-cognitivas">Teorías Humanistas</div>
+    <div class="materia bloqueada" data-id="teorias-sistemicas" data-previas="teorias-cognitivas">Teorías Sistémicas</div>
+    <div class="materia bloqueada" data-id="epistemologia" data-previas="pensamiento-matematico">Epistemología de la Ciencia Psicológica</div>
+    <div class="materia bloqueada" data-id="cultura-valores" data-previas="antropologia-social">Cultura y Valores</div>
+    <div class="materia bloqueada" data-id="ingles-basico-i" data-previas="">Inglés Básico I</div>
+  </div>
 
-    <!-- 5° SEMESTRE -->
-    <section class="semestre">
-      <h2>5° Semestre</h2>
-      <div class="ramos">
-        <div class="ramo linea-comunitaria">Políticas Sociales</div>
-        <div class="ramo linea-comunitaria">Psicología Comunitaria</div>
-        <div class="ramo linea-educacional">Evaluación Psicológica Cognitiva</div>
-        <div class="ramo linea-clinica">Psicopatología Infanto Juvenil</div>
-        <div class="ramo linea-investigacion">Investigación Cuantitativa</div>
-        <div class="ramo linea-organizacional">Psicología Organizacional y del Trabajo</div>
-      </div>
-    </section>
+  <!-- SEMESTRE 4 -->
+  <div class="semestre">
+    <h2>4° Semestre</h2>
+    <div class="materia bloqueada" data-id="procesos-neuropsicologicos-ii" data-previas="procesos-neuropsicologicos-i">Procesos Neuropsicológicos II</div>
+    <div class="materia bloqueada" data-id="psicologia-social" data-previas="teorias-humanistas, teorias-sistemicas">Psicología Social</div>
+    <div class="materia bloqueada" data-id="psicopatologia-adulto" data-previas="psicologia-personalidad, procesos-neuropsicologicos-i">Psicopatología del Adulto</div>
+    <div class="materia bloqueada" data-id="investigacion-cualitativa" data-previas="epistemologia">Investigación Cualitativa</div>
+    <div class="materia bloqueada" data-id="persona-sentido" data-previas="cultura-valores">Persona y Sentido</div>
+    <div class="materia bloqueada" data-id="ingles-basico-ii" data-previas="ingles-basico-i">Inglés Básico II</div>
+    <div class="materia bloqueada" data-id="evaluacion-competencias-i" data-previas="taller-desarrollo-personal-ii">Evaluación del Desarrollo de Competencias I</div>
+  </div>
 
-    <!-- 6° SEMESTRE -->
-    <section class="semestre">
-      <h2>6° Semestre</h2>
-      <div class="ramos">
-        <div class="ramo linea-educacional">Psicología Educacional</div>
-        <div class="ramo linea-educacional">Diagnóstico en Psicología Educacional</div>
-        <div class="ramo linea-comunitaria">Diagnóstico en Psicología Comunitaria</div>
-        <div class="ramo linea-educacional">Evaluación Socioafectiva</div>
-        <div class="ramo linea-investigacion">Estadística para la Psicología</div>
-        <div class="ramo linea-organizacional">Diagnóstico en Psicología Organizacional</div>
-      </div>
-    </section>
+  <!-- SEMESTRE 5 -->
+  <div class="semestre">
+    <h2>5° Semestre</h2>
+    <div class="materia bloqueada" data-id="politicas-sociales" data-previas="psicologia-social">Políticas Sociales</div>
+    <div class="materia bloqueada" data-id="psicologia-comunitaria" data-previas="psicologia-social">Psicología Comunitaria</div>
+    <div class="materia bloqueada" data-id="evaluacion-psicologica-cognitiva" data-previas="procesos-neuropsicologicos-ii">Evaluación Psicológica Cognitiva</div>
+    <div class="materia bloqueada" data-id="psicopatologia-infanto-juvenil" data-previas="psicopatologia-adulto">Psicopatología Infanto Juvenil</div>
+    <div class="materia bloqueada" data-id="investigacion-cuantitativa" data-previas="investigacion-cualitativa">Investigación Cuantitativa</div>
+    <div class="materia bloqueada" data-id="psicologia-organizacional" data-previas="psicologia-social">Psicología Organizacional y del Trabajo</div>
+  </div>
 
-    <!-- 7° SEMESTRE -->
-    <section class="semestre">
-      <h2>7° Semestre</h2>
-      <div class="ramos">
-        <div class="ramo linea-clinica">Diagnóstico en Psicología Clínica</div>
-        <div class="ramo linea-clinica">Psicología Clínica y Psicoterapia</div>
-        <div class="ramo linea-investigacion">Psicometría</div>
-        <div class="ramo linea-investigacion">Proyecto de Investigación en Psicología</div>
-        <div class="ramo linea-electivo">Electivo 1</div>
-      </div>
-    </section>
+  <!-- SEMESTRE 6 -->
+  <div class="semestre">
+    <h2>6° Semestre</h2>
+    <div class="materia bloqueada" data-id="psicologia-educacional" data-previas="psicologia-social">Psicología Educacional</div>
+    <div class="materia bloqueada" data-id="diagnostico-educacional" data-previas="psicologia-educacional">Diagnóstico en Psicología Educacional</div>
+    <div class="materia bloqueada" data-id="diagnostico-comunitario" data-previas="psicologia-comunitaria">Diagnóstico en Psicología Comunitaria</div>
+    <div class="materia bloqueada" data-id="evaluacion-psicoafectiva" data-previas="evaluacion-psicologica-cognitiva">Evaluación Socioafectiva</div>
+    <div class="materia bloqueada" data-id="estadistica-psicologia" data-previas="investigacion-cuantitativa">Estadística para la Psicología</div>
+    <div class="materia bloqueada" data-id="diagnostico-organizacional" data-previas="psicologia-organizacional">Diagnóstico en Psicología Organizacional</div>
+  </div>
 
-    <!-- 8° SEMESTRE -->
-    <section class="semestre">
-      <h2>8° Semestre</h2>
-      <div class="ramos">
-        <div class="ramo linea-intervencion">Intervención Psicológica I</div>
-        <div class="ramo linea-investigacion">Seminario de Investigación en Psicología</div>
-        <div class="ramo linea-electivo">Electivo 2</div>
-        <div class="ramo linea-talleres">Taller 4: Ética Profesional en Psicología</div>
-      </div>
-    </section>
+  <!-- SEMESTRE 7 -->
+  <div class="semestre">
+    <h2>7° Semestre</h2>
+    <div class="materia bloqueada" data-id="diagnostico-clinico" data-previas="evaluacion-psicoafectiva">Diagnóstico en Psicología Clínica</div>
+    <div class="materia bloqueada" data-id="psicologia-clinica-psicoterapia" data-previas="evaluacion-psicoafectiva">Psicología Clínica y Psicoterapia</div>
+    <div class="materia bloqueada" data-id="psicometria" data-previas="estadistica-psicologia">Psicometría</div>
+    <div class="materia bloqueada" data-id="proyecto-investigacion" data-previas="estadistica-psicologia">Proyecto de Investigación en Psicología</div>
+    <div class="materia bloqueada" data-id="electivo-1" data-previas="">Electivo 1</div>
+    <div class="materia bloqueada" data-id="taller-3" data-previas="taller-2">Taller 3: Identidad Profesional</div>
+  </div>
 
-    <!-- 9° SEMESTRE -->
-    <section class="semestre">
-      <h2>9° Semestre</h2>
-      <div class="ramos">
-        <div class="ramo linea-intervencion">Intervención Psicológica II</div>
-        <div class="ramo linea-electivo">Electivo 3</div>
-        <div class="ramo linea-talleres">Taller 5: Autocuidado</div>
-      </div>
-    </section>
+  <!-- SEMESTRE 8 -->
+  <div class="semestre">
+    <h2>8° Semestre</h2>
+    <div class="materia bloqueada" data-id="intervencion-psicologica-i" data-previas="diagnostico-clinico, diagnostico-educacional, diagnostico-comunitario, diagnostico-organizacional">Intervención Psicológica I</div>
+    <div class="materia bloqueada" data-id="seminario-investigacion" data-previas="proyecto-investigacion">Seminario de Investigación en Psicología</div>
+    <div class="materia bloqueada" data-id="electivo-2" data-previas="electivo-1">Electivo 2</div>
+    <div class="materia bloqueada" data-id="taller-4" data-previas="taller-3">Taller 4: Ética Profesional en Psicología</div>
+  </div>
 
-    <!-- 10° SEMESTRE -->
-    <section class="semestre">
-      <h2>10° Semestre</h2>
-      <div class="ramos">
-        <div class="ramo linea-intervencion">Práctica Profesional Psicológica</div>
-        <div class="ramo linea-examen">Examen de Título y Grado</div>
-      </div>
-    </section>
+  <!-- SEMESTRE 9 -->
+  <div class="semestre">
+    <h2>9° Semestre</h2>
+    <div class="materia bloqueada" data-id="intervencion-psicologica-ii" data-previas="intervencion-psicologica-i">Intervención Psicológica II</div>
+    <div class="materia bloqueada" data-id="electivo-3" data-previas="electivo-2">Electivo 3</div>
+    <div class="materia bloqueada" data-id="taller-5" data-previas="taller-4">Taller 5: Autocuidado</div>
+  </div>
 
-  </main>
+  <!-- SEMESTRE 10 -->
+  <div class="semestre">
+    <h2>10° Semestre</h2>
+    <div class="materia bloqueada" data-id="practica-profesional" data-previas="ALL">Práctica Profesional Psicológica</div>
+    <div class="materia bloqueada" data-id="examen-titulo" data-previas="ALL">Examen de Título y Grado</div>
+  </div>
 
-  <footer>
-  </footer>
+</div>
+
+<button class="btn-reset" onclick="reiniciar()">Reiniciar Progreso</button>
+
+<script>
+  const materias = document.querySelectorAll('.materia');
+
+  function cargarProgreso() {
+    let progreso = JSON.parse(localStorage.getItem('progresoPsico')) || {};
+    materias.forEach(m => {
+      let id = m.dataset.id;
+      if (progreso[id] === 'aprobada') m.classList.replace('habilitada','aprobada');
+    });
+    actualizarEstados();
+  }
+
+  function guardarProgreso() {
+    let progreso = {};
+    materias.forEach(m => {
+      if (m.classList.contains('aprobada')) progreso[m.dataset.id] = 'aprobada';
+    });
+    localStorage.setItem('progresoPsico', JSON.stringify(progreso));
+  }
+
+  function desbloquear(materia) {
+    if(materia.dataset.previas === 'ALL'){
+      let todasAprobadas = Array.from(materias).filter(m => m.dataset.previas !== 'ALL').every(m => m.classList.contains('aprobada'));
+      if(todasAprobadas && materia.classList.contains('bloqueada')){
+        materia.classList.remove('bloqueada');
+        materia.classList.add('habilitada');
+      }
+    } else {
+      let previas = materia.dataset.previas.split(',').map(s => s.trim()).filter(Boolean);
+      if(previas.length === 0){
+        if(materia.classList.contains('bloqueada')){
+          materia.classList.remove('bloqueada');
+          materia.classList.add('habilitada');
+        }
+      } else {
+        let todasOk = previas.every(id => document.querySelector(`[data-id="${id}"]`).classList.contains('aprobada'));
+        if(todasOk && materia.classList.contains('bloqueada')){
+          materia.classList.remove('bloqueada');
+          materia.classList.add('habilitada');
+        }
+      }
+    }
+  }
+
+  function actualizarEstados(){
+    materias.forEach(m => desbloquear(m));
+  }
+
+  materias.forEach(m => {
+    m.addEventListener('click', () => {
+      if(m.classList.contains('habilitada')){
+        m.classList.remove('habilitada');
+        m.classList.add('aprobada');
+        guardarProgreso();
+        actualizarEstados();
+      } else if(m.classList.contains('aprobada')){
+        m.classList.remove('aprobada');
+        m.classList.add('habilitada');
+        guardarProgreso();
+        actualizarEstados();
+      }
+    });
+  });
+
+  function reiniciar(){
+    localStorage.removeItem('progresoPsico');
+    location.reload();
+  }
+
+  cargarProgreso();
+</script>
+
 </body>
 </html>
