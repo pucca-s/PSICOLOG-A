@@ -7,15 +7,15 @@
 <style>
   body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #f9f6ff;
-    color: #2a033e;
+    background: #cadffb; /* fondo claro */
+    color: #1f2e45;
     margin: 0;
     padding: 0;
   }
   header {
     text-align: center;
     padding: 20px;
-    background: #3C096C;
+    background: #3e5f8a; /* azul más oscuro */
     color: white;
   }
   .container {
@@ -34,7 +34,7 @@
   }
   .semestre h2 {
     text-align: center;
-    background: #C77DFF;
+    background: #6a9cde; /* azul intermedio brillante */
     color: white;
     padding: 8px;
     border-radius: 8px;
@@ -50,26 +50,26 @@
     cursor: pointer;
   }
   .bloqueada {
-    background: #3C096C;
+    background: #3e5f8a; /* azul oscuro */
     color: white;
     cursor: not-allowed;
-    opacity: 0.7;
+    opacity: 0.8;
   }
   .habilitada {
-    background: #C77DFF;
+    background: #5783bc; /* azul medio */
     color: white;
   }
   .aprobada {
-    background: #EBC9FF;
+    background: #a0c5f7; /* azul claro suave */
     text-decoration: line-through;
-    color: #4b2c5e;
-    opacity: 0.85;
+    color: #2a415e;
+    opacity: 0.9;
   }
   .btn-reset {
     display: block;
     margin: 20px auto;
     padding: 12px 20px;
-    background: #3C096C;
+    background: #3e5f8a; /* azul oscuro */
     color: white;
     border: none;
     border-radius: 8px;
@@ -78,7 +78,7 @@
     transition: background 0.3s;
   }
   .btn-reset:hover {
-    background: #5a189a;
+    background: #5783bc; /* azul medio */
   }
   @media(max-width: 768px) {
     .container {flex-direction: column; align-items: center;}
@@ -89,8 +89,8 @@
 
 <header>
   <h1>Malla Interactiva - Psicología</h1>
-  <p>Toca una materia habilitada para marcarla como aprobada. Se desbloquearán automáticamente las correlativas.</p>
 </header>
+
 
 <div class="container">
 
